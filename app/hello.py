@@ -1,12 +1,9 @@
-#!flask/bin/python
-from flask import render_template
 from flask import Flask
+application = Flask(__name__)
 
-app = Flask(__name__)
-
-@app.route('/')
+@application.route("/")
 def hello():
-    return render_template('hello.html')
+    return "<h1 style='color:blue'>Hello There!</h1>"
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+if __name__ == "__main__":
+    application.run(host='0.0.0.0')
